@@ -327,7 +327,7 @@ class ExceptionFilterTest(test_base.BaseTestCase):
     def _make_filter_func(self, ignore_classes=AssertionError):
         @excutils.exception_filter
         def ignore_exceptions(ex):
-            '''Ignore some exceptions F'''
+            '''Ignore some exceptions F.'''
             return isinstance(ex, ignore_classes)
 
         return ignore_exceptions
@@ -339,7 +339,7 @@ class ExceptionFilterTest(test_base.BaseTestCase):
 
             @excutils.exception_filter
             def ignore_exceptions(self, ex):
-                '''Ignore some exceptions M'''
+                '''Ignore some exceptions M.'''
                 return isinstance(ex, self.ignore)
 
         return ExceptionIgnorer(ignore_classes).ignore_exceptions
@@ -351,7 +351,7 @@ class ExceptionFilterTest(test_base.BaseTestCase):
             @excutils.exception_filter
             @classmethod
             def ignore_exceptions(cls, ex):
-                '''Ignore some exceptions C'''
+                '''Ignore some exceptions C.'''
                 return isinstance(ex, cls.ignore)
 
         return ExceptionIgnorer.ignore_exceptions
@@ -361,7 +361,7 @@ class ExceptionFilterTest(test_base.BaseTestCase):
             @excutils.exception_filter
             @staticmethod
             def ignore_exceptions(ex):
-                '''Ignore some exceptions S'''
+                '''Ignore some exceptions S.'''
                 return isinstance(ex, ignore_classes)
 
         return ExceptionIgnorer.ignore_exceptions

@@ -16,11 +16,11 @@
 #    under the License.
 
 import mock
+import oslo_i18n
 from oslotest import base as test_base
 import six
 import testtools
 
-import oslo_i18n.fixture
 from oslo_utils import encodeutils
 
 
